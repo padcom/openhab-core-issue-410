@@ -1,0 +1,25 @@
+version: "2"
+
+services:
+  mqtt:
+    container_name: mqtt
+    image: ncarlier/mqtt
+    ports:
+      - "1883:1883"
+    logging:
+      driver: json-file
+
+  openhab:
+    container_name: openhab
+    image: openhab/openhab:2.3.0-amd64-debian
+    network_mode: host
+    depends_on:
+      - mqtt
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ./openhab/addons:/openhab/addons
+      - ./openhab/conf:/openhab/conf
+      - ./openhab/userdata:/openhab/userdata
+    logging:
+      driver: json-file

@@ -1,0 +1,2 @@
+Switch MyLight1 "My light 1" { mqtt=">[mqtt:light/my-light:command:ON:ON], >[mqtt:light/my-light:command:OFF:OFF], <[mqtt:light/my-light/state:state:default]" }
+Switch MyLight2 "My light 2" { mqtt="<[mqtt:light/my-light/state:state:default]" }
