@@ -1,6 +1,5 @@
 sitemap default label="Test lights" {
     Frame label="Those are test lights" {
-        Switch item=MyLight1
-        Switch item=MyLight2
+        Switch item=MyLight
     }
 }
