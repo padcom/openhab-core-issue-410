@@ -1,4 +1,4 @@
-sitemap default label="Test lights" {
+sitemap lights label="Test lights" {
     Frame label="Those are test lights" {
         Switch item=MyLight
     }
